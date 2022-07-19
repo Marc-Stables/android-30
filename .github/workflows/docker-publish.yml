@@ -26,6 +26,6 @@ jobs:
         run: |
           docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
       - name: Build img
-        run: docker build . --file Dockerfile --tag marc-stables/mpostest123
+        run: docker build . --file Dockerfile --tag marc-stables/mpostest:123
       - name: Push img
-        run: docker push ${{secrets.DOCKER_USER}}/mpostest123
+        run: docker push ${{secrets.DOCKER_USER}}/mpostest:123
