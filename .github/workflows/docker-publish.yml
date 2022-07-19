@@ -28,4 +28,4 @@ jobs:
       - name: Build img
         run: docker build . --file Dockerfile --tag marc-stables/mpostest:123
       - name: Push img
-        run: docker push ${{secrets.DOCKER_USER}}/mpostest:123
+        run: docker push marc-stables/mpostest:123
