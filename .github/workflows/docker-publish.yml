@@ -24,7 +24,7 @@ jobs:
           DOCKER_USER: ${{secrets.DOCKER_USER}}
           DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
         run: |
-          sudo docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+          sudo docker login -u $DOCKER_USER -p $DOCKER_PASSWORD docker.io
       - name: Build img
         run: sudo docker build . --file Dockerfile --tag marc-stables/mpostest:123
       - name: Push img
