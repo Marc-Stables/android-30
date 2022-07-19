@@ -19,14 +19,7 @@ ENV PATH "${PATH}:${ANDROID_HOME}/bin"
 RUN dpkg --add-architecture i386 && \
     apt-get update -yqq && \
     apt-get install -y curl expect git qemu libc6:i386 libgcc1:i386 libncurses5:i386 libstdc++6:i386 zlib1g:i386 openjdk-11-jdk wget unzip vim && \
-    apt-get clean && \
-	qemu-system-x86_64
-	qemu-system-x86_64 \
-	  -append 'root=/dev/vda console=ttyS0' \
-	  -drive file='rootfs.ext2.qcow2,if=virtio,format=qcow2'  \
-	  -enable-kvm \
-	  -kernel 'bzImage' \
-	  -nographic \
+    apt-get clean
 
 RUN groupadd android && useradd -d /opt/android-sdk-linux -g android android
 
