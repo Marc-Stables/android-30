@@ -28,4 +28,4 @@ jobs:
       - name: Build img
         run: docker build . --file Dockerfile --tag marc-stables/test:$(date +%s)
       - name: Push img
-        run: docker push ${{secrets.DOCKER_USER}}/android-30
+        run: docker push ${{secrets.DOCKER_USER}}/mpostest
